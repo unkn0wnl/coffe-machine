@@ -1,2 +1,5 @@
-package com.innowise.coffeemachine.entity;public class OrderStatus {
+package com.innowise.coffeemachine.entity;
+
+public enum OrderStatus {
+    READY, PREPARE
 }

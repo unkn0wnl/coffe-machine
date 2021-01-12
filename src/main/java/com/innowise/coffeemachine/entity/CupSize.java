@@ -1,5 +1,5 @@
 package com.innowise.coffeemachine.entity;
 
-public enum CupSizes {
+public enum CupSize {
     SMALL, MEDIUM, LARGE
 }
