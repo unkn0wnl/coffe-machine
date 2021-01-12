@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(
-        name = "odrder_drink",
+        name = "order_drink",
         schema = "public"
 )
 @RequiredArgsConstructor
