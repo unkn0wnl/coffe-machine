@@ -1,13 +1,14 @@
-package com.innowise.coffeemachine.entity;
-
+package com.innowise.coffeemachine.entity.jpa;
 
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+
 
 @Entity
 @Table(
-        name = "drink_size",
+        name = "user_order",
         schema = "public"
 )
 @RequiredArgsConstructor
@@ -15,13 +16,18 @@ import javax.persistence.*;
 @Setter
 @EqualsAndHashCode
 @ToString
-public class DrinkSize {
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private LocalDate creationDate;
     @Enumerated(value = EnumType.STRING)
-    private CupSize cupSize;
+    private OrderStatus orderStatus;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }

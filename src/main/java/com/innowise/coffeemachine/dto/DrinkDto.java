@@ -1,7 +1,7 @@
 package com.innowise.coffeemachine.dto;
 
-import com.innowise.coffeemachine.entity.Addition;
-import com.innowise.coffeemachine.entity.DrinkSize;
+import com.innowise.coffeemachine.entity.jpa.Addition;
+import com.innowise.coffeemachine.entity.jpa.DrinkSize;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

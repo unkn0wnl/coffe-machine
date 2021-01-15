@@ -1,4 +1,4 @@
-package com.innowise.coffeemachine.entity;
+package com.innowise.coffeemachine.entity.jpa;
 
 import lombok.*;
 import org.hibernate.annotations.NaturalId;

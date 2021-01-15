@@ -1,7 +1,7 @@
 package com.innowise.coffeemachine.mapper;
 
 import com.innowise.coffeemachine.dto.CardAccountDto;
-import com.innowise.coffeemachine.entity.CardAccount;
+import com.innowise.coffeemachine.entity.jpa.CardAccount;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

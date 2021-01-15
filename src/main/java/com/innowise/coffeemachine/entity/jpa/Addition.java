@@ -1,4 +1,4 @@
-package com.innowise.coffeemachine.entity;
+package com.innowise.coffeemachine.entity.jpa;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(
-        name = "card_account",
+        name = "addition",
         schema = "public"
 )
 @RequiredArgsConstructor
@@ -15,16 +15,13 @@ import java.math.BigDecimal;
 @Setter
 @EqualsAndHashCode
 @ToString
-public class CardAccount {
+public class Addition {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String cardNumber;
-    private BigDecimal amount;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private String title;
+    private BigDecimal price;
 
 }

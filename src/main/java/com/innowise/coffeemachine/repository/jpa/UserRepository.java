@@ -1,6 +1,6 @@
 package com.innowise.coffeemachine.repository.jpa;
 
-import com.innowise.coffeemachine.entity.User;
+import com.innowise.coffeemachine.entity.jpa.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

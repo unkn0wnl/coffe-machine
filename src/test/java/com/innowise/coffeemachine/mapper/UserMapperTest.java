@@ -1,8 +1,8 @@
 package com.innowise.coffeemachine.mapper;
 
 import com.innowise.coffeemachine.dto.UserDto;
-import com.innowise.coffeemachine.entity.Order;
-import com.innowise.coffeemachine.entity.User;
+import com.innowise.coffeemachine.entity.jpa.Order;
+import com.innowise.coffeemachine.entity.jpa.User;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

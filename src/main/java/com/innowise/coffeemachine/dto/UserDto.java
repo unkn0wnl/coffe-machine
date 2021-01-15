@@ -1,8 +1,8 @@
 package com.innowise.coffeemachine.dto;
 
 
-import com.innowise.coffeemachine.entity.CardAccount;
-import com.innowise.coffeemachine.entity.Order;
+import com.innowise.coffeemachine.entity.jpa.CardAccount;
+import com.innowise.coffeemachine.entity.jpa.Order;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

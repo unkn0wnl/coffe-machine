@@ -1,6 +1,6 @@
 package com.innowise.coffeemachine.dto;
 
-import com.innowise.coffeemachine.entity.OrderStatus;
+import com.innowise.coffeemachine.entity.jpa.OrderStatus;
 
 import java.time.LocalDate;
 

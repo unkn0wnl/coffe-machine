@@ -1,7 +1,7 @@
 package com.innowise.coffeemachine.mapper;
 
 import com.innowise.coffeemachine.dto.UserDto;
-import com.innowise.coffeemachine.entity.User;
+import com.innowise.coffeemachine.entity.jpa.User;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
