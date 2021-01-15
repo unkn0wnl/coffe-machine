@@ -1,4 +1,4 @@
-package com.innowise.coffeemachine.repository;
+package com.innowise.coffeemachine.repository.jpa;
 
 import com.innowise.coffeemachine.entity.Drink;
 import org.springframework.data.jpa.repository.JpaRepository;

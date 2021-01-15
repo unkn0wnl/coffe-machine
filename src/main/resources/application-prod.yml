@@ -1,0 +1,14 @@
+spring:
+  data:
+    jpa:
+      repositories:
+        enabled: false
+    mongodb:
+      authentication-database: admin
+      username: root
+      password: pass
+      port: 27017
+      host: localhost
+      database: coffee-machine
+  flyway:
+    enabled: false
