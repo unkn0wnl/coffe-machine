@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    data-username: ${SPRING_DATASOURCE_USERNAME}
+    data-password: ${SPRING_DATASOURCE_PASSWORD}
+
+logging:
+  config: classpath:log4j2-prod.xml

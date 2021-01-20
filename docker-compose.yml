@@ -1,0 +1,56 @@
+version: '3.9'
+
+services:
+
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+      - ../pgdata:/var/lib/postgresql/data
+    ports:
+      - 6543:5432
+    environment:
+      POSTGRES_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    container_name: coffee-postgres
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    networks:
+      - coffe-machine-elk
+    ports:
+      - 9200:9200
+    environment:
+      - "discovery.type=single-node"
+    volumes:
+      - ./elasticsearch/data:/usr/share/elasticsearch/data:rw              # Persistence data
+    container_name: es
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.10.2
+    networks:
+      - coffe-machine-elk
+    ports:
+      - 25826:25826
+      - 5044:5044
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro                # Pipeline configuration
+    restart: on-failure
+    depends_on:
+      - elasticsearch
+    container_name: logstash
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.10.2
+    networks:
+      - coffe-machine-elk
+    ports:
+      - 5601:5601
+    restart: on-failure
+    depends_on:
+      - elasticsearch
+    container_name: kibana
+
+networks:
+  coffe-machine-elk:
+    driver: bridge

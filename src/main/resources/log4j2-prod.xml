@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration tatus="DEBUG"
+               packages="org.apache.logging.log4j.core.layout"
+               verbose="false">
+    <properties>
+        <property name="defaultpattern">logdate=(%d{ISO8601}) thread=(%thread)) level=(%level) loggerclass=(%logger{36})
+            message=(%msg)%n
+        </property>
+    </properties>
+    <Appenders>
+        <Socket name="logstash" host="localhost" port="5044">
+            <PatternLayout pattern="${defaultpattern}" charset="UTF-8"/>
+        </Socket>
+        <Async name="LogstashAsync" bufferSize="204800">
+            <AppenderRef ref="logstash"/>
+        </Async>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="logstash"/>
+        </Root>
+        <!--        <Logger name="org.springframework"-->
+        <!--                level="WARN"/>-->
+        <!--        <Logger name="com.innowise"-->
+        <!--                level="INFO"/>-->
+    </Loggers>
+</Configuration>
